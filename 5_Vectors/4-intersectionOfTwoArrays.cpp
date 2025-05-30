@@ -1,24 +1,25 @@
-# include <iostream>
-# include <vector>
-# include <limits.h> 
+#include <iostream>
+#include <vector>
+#include <limits.h>
 using namespace std;
 
 int main () {
-    int arr1[5] = {1,3,3,7,9};
-    int arr2[5] = {2,3,3,7,11};
-    vector<int> ans;
-    for(int i = 0; i< 5; i++) {
-        for(int j= 0; j<5; j++) {
-            if(arr1[i] == arr2[j]) {
-                ans.push_back(arr1[i]);
-                arr2[j] = INT_MIN;
+    vector<int> arr{1,2,3,4,5};
+    vector<int> brr{1,25,8,4,3};
+
+    vector<int> crr;
+
+    for (int i = 0; i < arr.size(); i++) {
+        for (int j = 0; j < brr.size(); j++) {
+            if(arr[i] == brr[j]) {
+                crr.push_back(arr[i]);
+                brr[j] = INT_MIN;
             }
         }
     }
-    cout << "Following is the intesection: ";
-
-    for(int i = 0; i < ans.size(); i++) {
-        cout << ans[i] << " ";
+    for (int k = 0; k < crr.size(); k++) {
+        cout << crr[k] << " ";
     }
+
     return 0;
 }

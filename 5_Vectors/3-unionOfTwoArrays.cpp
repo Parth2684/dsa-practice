@@ -1,6 +1,7 @@
 // assuming there is no repeatation
 # include <iostream>
 # include <vector>
+# include <limits.h>
 using namespace std;
 
 
@@ -23,11 +24,30 @@ int main () {
     }
 
     vector<int> ans;
+
+    for (int i = 0; i < arr1.size(); i++) {
+        for (int j = 0; j < arr2.size(); j++) {
+            if(arr1[i] == arr2[j]) {
+                arr2[j] = INT_MIN;
+            }
+        }
+    }
+
     for (int i = 0; i<arr1.size(); i++) {
-        ans.push_back(arr1[i]);
+        for (int j = i+1; j < arr1.size(); j++) {
+            if(arr1[i] == arr1[j]) {
+                arr1[j] = INT_MIN;
+            }
+        }
+        if(arr1[i] != INT_MIN) {
+            ans.push_back(arr1[i]);
+        }
+        
     } 
     for (int i = 0; i<arr2.size(); i++) {
-        ans.push_back(arr2[i]);
+        if(arr2[i] != INT_MIN) {
+            ans.push_back(arr2[i]);
+        }
     } 
 
     for (int i = 0; i < ans.size(); i++) {
