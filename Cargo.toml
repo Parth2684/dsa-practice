@@ -1,0 +1,9 @@
+[package]
+name = "dsa-practice"
+version = "0.1.0"
+edition = "2024"
+
+
+[[bin]]
+name = "simple_binary_search"
+path = "9_binary_search/simple.rs"
