@@ -7,3 +7,7 @@ edition = "2024"
 [[bin]]
 name = "simple_binary_search"
 path = "9_binary_search/simple.rs"
+
+[[bin]]
+name = "simple_linked_list"
+path = "11_linked_list/simple.rs"
