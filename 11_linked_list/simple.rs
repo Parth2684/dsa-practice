@@ -1,3 +1,5 @@
+use std::fs;
+
 #[derive(Clone, Debug)]
 struct Node {
     data: i32,
